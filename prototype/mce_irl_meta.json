@@ -1,0 +1,27 @@
+{
+  "feat_cols": [
+    "highway1_len",
+    "drain_delay_h1",
+    "can_take2",
+    "next_highway1_len",
+    "next_drain_delay_h1",
+    "next_can_take2"
+  ],
+  "target": "can_take1",
+  "accuracy": 0.2949640287769784,
+  "n_states": 576,
+  "n_actions": 2,
+  "horizon": 139,
+  "n_iter": 100,
+  "lr": 0.01,
+  "discount": 0.99,
+  "max_bins": 4,
+  "bin_sizes": [
+    4,
+    3,
+    2,
+    4,
+    3,
+    2
+  ]
+}
