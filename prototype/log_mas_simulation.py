@@ -15,8 +15,8 @@
 Если can_take2=0, очередь highway2 подсвечивается красным на визуализации.
 
 Логирование:
-  По нажатию start_logging начинается запись каждые 100 мс:
-    - len(highway1), drain_delay_h1, can_take2, timestamp (мс)
+  По нажатию start_logging начинается запись каждые 1 с:
+    - len(highway1), drain_delay_h1, can_take1, can_take2, timestamp (мс)
   По нажатию stop_logging запись завершается, CSV сохраняется в ./expert/expert_<YYYYMMDDHHMMSS>.csv
 """
 
@@ -120,6 +120,7 @@ def log_loop():
         with lock:
             h1_len       = len(highway1)
             drain_h1     = sim_cfg['drain_delay_h1']
+            ct1          = sim_cfg['can_take1']
             ct2          = can_take2()
 
         with log_lock:
@@ -127,10 +128,11 @@ def log_loop():
                 'timestamp':      ts,
                 'highway1_len':   h1_len,
                 'drain_delay_h1': drain_h1,
+                'can_take1':      ct1,
                 'can_take2':      ct2,
             })
 
-        time.sleep(0.1)
+        time.sleep(1.0)
 
 
 def save_log():
@@ -145,7 +147,7 @@ def save_log():
         return filename
 
     with open(filepath, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=['timestamp', 'highway1_len', 'drain_delay_h1', 'can_take2'])
+        writer = csv.DictWriter(f, fieldnames=['timestamp', 'highway1_len', 'drain_delay_h1', 'can_take1', 'can_take2'])
         writer.writeheader()
         writer.writerows(rows)
 
@@ -611,7 +613,7 @@ button:hover { opacity: .8; }
 
   <!-- Логирование -->
   <div class="ctrl-group">
-    <label>Логирование данных (каждые 100 мс)</label>
+    <label>Логирование данных (каждые 1 с)</label>
     <div class="btn-row">
       <button id="btn-start-log" onclick="startLogging()">◉ Начать лог</button>
       <button id="btn-stop-log"  onclick="stopLogging()">◼ Сохранить лог</button>

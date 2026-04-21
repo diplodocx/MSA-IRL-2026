@@ -23,7 +23,14 @@
       "Bash(curl -s http://localhost:5002)",
       "Bash(curl -s http://localhost:5003)",
       "Bash(pkill -f mas_simulation.py)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(/usr/bin/env python3:*)",
+      "Bash(pip3 list:*)",
+      "Bash(conda info:*)",
+      "Read(//Users/zahar/miniforge3/bin/**)",
+      "Read(//Users/zahar/miniconda3/bin/**)",
+      "Read(//Users/zahar/anaconda3/bin/**)",
+      "Read(//opt/**)"
     ]
   }
 }
