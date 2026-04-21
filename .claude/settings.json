@@ -18,7 +18,7 @@
     "outputStyle": "default",
     "spinnerTipsEnabled": true,
     "alwaysThinkingEnabled": true,
-    "effortLevel": "high",
+    "effortLevel": "medium",
     "includeCoAuthoredBy": false,
     "systemPrompt": "~/.claude/memory.md",
     "mcpServers": {}

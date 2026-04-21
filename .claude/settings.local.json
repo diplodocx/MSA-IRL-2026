@@ -22,7 +22,8 @@
       "Bash(curl -s http://localhost:5001)",
       "Bash(curl -s http://localhost:5002)",
       "Bash(curl -s http://localhost:5003)",
-      "Bash(pkill -f mas_simulation.py)"
+      "Bash(pkill -f mas_simulation.py)",
+      "Bash(python:*)"
     ]
   }
 }

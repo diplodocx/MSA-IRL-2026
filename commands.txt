@@ -1,0 +1,29 @@
+  # simulation.py → http://localhost:5001                                     
+  python3 prototype/simulation.py                                             
+                                                                              
+  # rnd_simulation.py → http://localhost:5002                                 
+  python3 prototype/rnd_simulation.py                                         
+                                                                              
+  # mas_simulation.py → http://localhost:5003
+  python3 prototype/mas_simulation.py            
+                                                 
+  # log_mas_simulation.py → http://localhost:5004                             
+  python3 prototype/log_mas_simulation.py
+                                                                              
+  ---                             
+  Управление процессами на портах
+                                 
+  Посмотреть, кто занимает порт:                 
+  lsof -i :5001                                                               
+  lsof -i :5002
+                                                                              
+  Убить процесс на порту (одной командой):
+  kill $(lsof -ti :5001)                                                      
+  kill $(lsof -ti :5002)
+                                                                              
+  Убить принудительно (если обычный kill не помогает):
+  kill -9 $(lsof -ti :5001)                                                   
+  kill -9 $(lsof -ti :5002)       
+                                                                              
+  Убить все сразу:                
+  kill $(lsof -ti :5001 :5002 :5003 :5004) 
