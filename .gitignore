@@ -1,0 +1,52 @@
+# Секреты
+.env
+*.key
+*.pem
+
+# Python
+pycache/
+*.pyc
+*.pyo
+*.egg-info/
+.ruff_cache/
+.pytest_cache/
+
+# Node
+node_modules/
+node-cache/
+frontend/service/dist/
+frontend/service/stats.html
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Логи
+*.log
+logs/
+
+# Бинарные архивы
+*.rar
+*.zip
+*.7z
+*.tar.gz
+
+# Индексы и данные (большие файлы)
+*.pkl
+*.pickle
+*.faiss
+*.xlsx
+
+# Runtime data (сессии, бэкапы)
+*.bak
+backend/service/data/sessions/*.json
+backend/service/data/ai_gen_history.jsonl
+
+# Claude Code
+prompt_examples.md

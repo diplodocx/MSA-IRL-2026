@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(brew install:*)",
+      "Bash(python3:*)",
+      "Bash(pip show:*)",
+      "Bash(pip3 show:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "mcp__github__create_repository",
+      "Bash(gh auth:*)",
+      "Bash(gh repo:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(gh api:*)",
+      "Bash(curl -s -I -H \"Authorization: token $\\(gh auth token\\)\" https://api.github.com/user)",
+      "Bash(curl -s -H \"Authorization: token $\\(gh auth token\\)\" https://api.github.com/user)",
+      "Bash(ssh -T git@github.com)",
+      "Bash(ssh-keyscan github.com)",
+      "Bash(pkill -f simulation.py)",
+      "Bash(curl -s http://localhost:5001)",
+      "Bash(curl -s http://localhost:5002)",
+      "Bash(curl -s http://localhost:5003)",
+      "Bash(pkill -f mas_simulation.py)"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+    "env": {
+      "DISABLE_TELEMETRY": "1",
+      "DISABLE_ERROR_REPORTING": "1",
+      "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
+    },
+    "permissions": {
+      "allow": [
+        "Bash(dir:*)",
+        "Bash(ls:*)"
+      ],
+      "deny": [
+        "Read(~/.ssh/**)",
+        "Bash(rm *)", 
+        "Edit(src/migrations/**)"
+      ]
+    },
+    "outputStyle": "default",
+    "spinnerTipsEnabled": true,
+    "alwaysThinkingEnabled": true,
+    "effortLevel": "high",
+    "includeCoAuthoredBy": false,
+    "systemPrompt": "~/.claude/memory.md",
+    "mcpServers": {}
+}
