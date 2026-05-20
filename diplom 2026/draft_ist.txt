@@ -1,0 +1,24 @@
+СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ
+
+1. Adams, S., Cody, T., Beling, P. A. A Survey of Inverse Reinforcement Learning:
+   Challenges, Methods and Progress // Artificial Intelligence. — 2022. — Vol. 297. —
+   Article 103500. — DOI: 10.1016/j.artint.2021.103500.
+
+2. Yu, L., Song, J., Ermon, S. Multi-Agent Adversarial Inverse Reinforcement Learning //
+   Proceedings of the 36th International Conference on Machine Learning (ICML 2019),
+   republished in: Journal of Machine Learning Research. — 2021. — Vol. 22, No. 1. —
+   P. 1–34. — DOI: 10.48550/arXiv.1907.13220.
+
+3. Arenz, O., Zhong, M., Neumann, G. Non-Adversarial Imitation Learning and Its
+   Connections to Adversarial Methods // Proceedings of the 25th International Conference
+   on Artificial Intelligence and Statistics (AISTATS 2022). — PMLR. — 2022. —
+   Vol. 151. — P. 1008–1024.
+
+4. Snoswell, A. J., Singh, S. P., Ye, N. Revisiting Maximum Entropy Inverse Reinforcement
+   Learning: New Perspectives and Algorithms // Proceedings of the AAAI Conference on
+   Artificial Intelligence. — 2023. — Vol. 37, No. 8. — P. 9939–9947. —
+   DOI: 10.1609/aaai.v37i8.26178.
+
+5. Terry, J. K., Black, B., Grammel, N. et al. PettingZoo: Gym for Multi-Agent
+   Reinforcement Learning // Advances in Neural Information Processing Systems
+   (NeurIPS 2021). — 2021. — Vol. 34. — P. 15032–15043.

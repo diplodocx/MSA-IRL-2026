@@ -1,0 +1,59 @@
+@startuml
+skinparam shadowing false
+skinparam defaultFontSize 12
+skinparam sequenceMessageAlign center
+
+title Диаграмма последовательности:\nодин цикл обработки транспортной единицы
+
+actor "Оператор" as User
+participant "Симуляционный\nцикл" as Sim
+queue "Главная\nполоса" as Main
+participant "Агент 1\n(эксперт)" as A1
+participant "Агент 2\n(пороговый)" as A2
+participant "Координирующий\nмодуль" as Coord
+queue "Полоса 1" as H1
+queue "Полоса 2" as H2
+
+== Поступление автомобиля ==
+
+Sim -> Sim : проверить задержку\nподачи (main_delay)
+Sim -> Main : добавить автомобиль\n(если есть место)
+Main --> Sim : текущая заполненность
+
+== Формирование сигналов агентов ==
+
+Sim -> A1 : запросить готовность
+User -> A1 : установить can_take1
+A1 --> Sim : can_take1 = 0 | 1
+
+Sim -> A2 : запросить готовность
+A2 -> A2 : сравнить длину\nочереди с порогом
+A2 --> Sim : can_take2 = 0 | 1
+
+== Маршрутизация ==
+
+Sim -> Sim : проверить задержку\nперевода (transfer_delay)
+Sim -> Coord : передать (can_take1, can_take2)
+Coord -> Coord : определить\nцелевую полосу
+
+alt оба = 0
+    Coord --> Sim : ожидание\n(автомобиль остаётся)
+else оба = 1
+    Coord --> Sim : случайный выбор (p=0.5)
+else только один = 1
+    Coord --> Sim : направить\nна готовую полосу
+end
+
+Sim -> Main : извлечь автомобиль
+Sim -> H1 : добавить\n(если выбрана полоса 1)
+Sim -> H2 : добавить\n(если выбрана полоса 2)
+
+== Выезд из полос ==
+
+Sim -> Sim : проверить задержку\nвыезда (drain_delay_h1)
+Sim -> H1 : извлечь автомобиль\n(если интервал истёк)
+
+Sim -> Sim : проверить задержку\nвыезда (drain_delay_h2)
+Sim -> H2 : извлечь автомобиль\n(если интервал истёк)
+
+@enduml

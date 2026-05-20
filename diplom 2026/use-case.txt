@@ -1,0 +1,33 @@
+@startuml
+left to right direction
+skinparam actorStyle awesome
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam defaultFontSize 13
+skinparam rectangleBorderColor #555555
+
+title Диаграмма прецедентов: Графический интерфейс пользователя\nсимуляционной системы многоагентного взаимодействия
+
+actor "Оператор" as User
+
+rectangle "Симуляционная система" {
+    usecase "Управлять симуляцией" as UC_Sim
+    usecase "Настроить параметры\nтранспортной среды" as UC_Params
+    usecase "Наблюдать состояние\nтранспортных потоков" as UC_Watch
+    usecase "Принять решение\nо маршрутизации" as UC_Route
+    usecase "Записать экспертные\nдемонстрации" as UC_Log
+    usecase "Рандомизировать\nпараметры среды" as UC_Random
+}
+
+User --> UC_Sim
+User --> UC_Params
+User --> UC_Watch
+User --> UC_Route
+User --> UC_Log
+User --> UC_Random
+
+UC_Random ..> UC_Params : <<extend>>
+UC_Route ..> UC_Watch : <<include>>
+UC_Log ..> UC_Watch : <<include>>
+
+@enduml
